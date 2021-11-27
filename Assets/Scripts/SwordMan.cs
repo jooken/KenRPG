@@ -28,6 +28,11 @@ public class SwordMan : MonoBehaviour
         } else {
             moving = false;
         }
-        animator.SetBool("moving", moving);       
+        animator.SetBool("moving", moving);
+
+        if(Input.GetKeyDown(KeyCode.A) 
+           && !animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")){
+            animator.SetTrigger("attack");
+        }
     }
 }
