@@ -7,14 +7,14 @@ public class Enemy : MonoBehaviour
     public GameObject prfHpBar;
     public GameObject canvas;
 
-    RectTransform hpBar;
+    RectTransform hpBarTransform;
 
     public float height = 1.7f;
 
     // Start is called before the first frame update
     void Start()
     {
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+        hpBarTransform = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -26,6 +26,6 @@ public class Enemy : MonoBehaviour
                 transform.position.y + height, 
                 0
             ));
-        hpBar.position = _hpBarPos;
+        hpBarTransform.position = _hpBarPos;
     }
 }
